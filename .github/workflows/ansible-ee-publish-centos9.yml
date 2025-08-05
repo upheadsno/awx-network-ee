@@ -5,11 +5,11 @@ on:
   # schedule:
   #   - cron: "26 22 * * *"
   push:
-    branches: ["move-to-awx-upstream"]
+    branches: ["centos9"]
     # Publish semver tags as releases.
     tags: ["v*.*.*"]
   pull_request:
-    branches: ["move-to-awx-upstream"]
+    branches: ["centos9"]
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io

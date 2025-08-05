@@ -1,6 +1,3 @@
-ansible
-ansible-core
-ansible-runner
 ansible-pylibssh
 ara
 docker
@@ -12,3 +9,6 @@ netbox-python
 netutils
 ntc-templates
 pynetbox
+pip==23.2.1
+ansible-core==2.19.0
+ansible-runner==2.4.1
