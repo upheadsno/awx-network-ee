@@ -1,10 +1,10 @@
 # https://ansible.readthedocs.io/projects/builder/en/latest/definition/
 version: 3
 dependencies:
-  # ansible_core:
-  #   package_pip: ansible-core==2.16.7
-  # ansible_runner:
-  #   package_pip: ansible-runner
+  ansible_core:
+    package_pip: ansible-core
+  ansible_runner:
+    package_pip: ansible-runner
   python_interpreter:
     package_system: "python3.12"
   system: dependencies/bindep.txt
