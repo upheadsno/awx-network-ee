@@ -28,5 +28,8 @@ additional_build_steps:
     yum install glibc-all-langpacks langpacks-en -y && \
     yum upgrade -y && \
     yum install python3.12 python3.12-devel -y && \
+    yum -y update ca-certificates && \
+    update-ca-trust force-enable && \
+    update-ca-trust extract && \
     yum clean all && \
     rm -rf /var/cache/yum
