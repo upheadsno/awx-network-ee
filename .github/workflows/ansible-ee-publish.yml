@@ -52,7 +52,7 @@ jobs:
           ansible-builder build \
           --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest \
           --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DATE }} \
-          --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${GITHUB_REF##*/}
+          --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${GITHUB_REF##*/} \
           --container-runtime docker \
           -v 3
       - name: Push AWX EE image
