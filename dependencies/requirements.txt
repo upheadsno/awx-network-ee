@@ -1,3 +1,6 @@
+ansible
+ansible-core
+ansible-runner
 ansible-pylibssh
 ara
 docker
