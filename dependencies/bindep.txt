@@ -1,0 +1,4 @@
+python3.12-devel
+ca-certificates
+glibc-all-langpacks
+langpacks-en
