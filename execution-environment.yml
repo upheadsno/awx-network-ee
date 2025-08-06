@@ -1,35 +1,22 @@
----
+# https://ansible.readthedocs.io/projects/builder/en/latest/definition/
 version: 3
-
 dependencies:
   ansible_core:
     package_pip: ansible-core==2.16.7
   ansible_runner:
-    package_pip: ansible-runner
+    package_pip: ansible-runner==2.4.1
   python_interpreter:
-    package_system: "python3.12"
-  galaxy: requirements.yml
-  python: requirements.txt
-  #system: bindep.txt
-
+    package_system: python3.12
+    python_path: /usr/bin/python3.12
+  system: dependencies/bindep.txt
+  galaxy: dependencies/requirements.yml
+  python: dependencies/requirements.txt
 images:
   base_image:
-    name: quay.io/centos/centos:stream8
-
+    name: quay.io/centos/centos:stream9
 additional_build_files:
   - src: files/ansible.cfg
     dest: configs
-
 additional_build_steps:
-  prepend_base: |
-    RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && \
-    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* && \
-    yum update -y && \
-    yum install glibc-all-langpacks langpacks-en -y && \
-    yum upgrade -y && \
-    yum install python3.12 python3.12-devel -y && \
-    yum -y update ca-certificates && \
-    update-ca-trust force-enable && \
-    update-ca-trust extract && \
-    yum clean all && \
-    rm -rf /var/cache/yum
+  prepend_base:
+    - RUN dnf install -y --allowerasing curl

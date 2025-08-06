@@ -7,6 +7,14 @@ This new version of ansible-builder addresses a lot of the issues with not being
 ## Building
 
 ```bash
+
+# Optional: set up venv if you run:
+python -m venv .venv
+source .venv/bin/activate
+
+# Install prereq
 pip install ansible-builder invoke
+
+# Build (this may take a couple of minutes)
 ansible-builder build -t awx-network-ee:latest -v 3
 ```

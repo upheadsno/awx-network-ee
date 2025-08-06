@@ -9,3 +9,6 @@ netbox-python
 netutils
 ntc-templates
 pynetbox
+pip
+ansible-core==2.16.7
+ansible-runner==2.4.1
