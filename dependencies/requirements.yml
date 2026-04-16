@@ -19,6 +19,5 @@ collections:
   - name: lvrfrc87.git_acp
   - name: napalm.napalm
   - name: netbox.netbox
-  - name: paloaltonetworks.panos
 roles:
   - name: batfish.base

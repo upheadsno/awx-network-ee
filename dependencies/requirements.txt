@@ -5,6 +5,8 @@ infoblox-client
 jmespath
 jsondiff
 napalm
+ncclient>=0.6.16
+paramiko>=3.2.0
 netbox-python
 netutils
 ntc-templates
