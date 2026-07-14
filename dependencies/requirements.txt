@@ -1,6 +1,7 @@
 ansible-pylibssh
 ara
 docker
+infisicalsdk
 infoblox-client
 jmespath
 jsondiff
