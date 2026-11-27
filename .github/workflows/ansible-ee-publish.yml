@@ -55,7 +55,10 @@ jobs:
           --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${GITHUB_REF##*/} \
           --container-runtime docker \
           -v 3
+      # Push only where the login above ran. On a PR the build is the check;
+      # an unauthenticated push fails the job even though the image is fine.
       - name: Push AWX EE image
+        if: github.event_name != 'pull_request'
         run: |
           docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest && \
           docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DATE }} && \
